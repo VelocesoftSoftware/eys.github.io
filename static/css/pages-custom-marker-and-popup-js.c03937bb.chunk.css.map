@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/custom-marker-and-popup.module.css"],"names":[],"mappings":"AAAA,kMAEE,UAAW,CACX,eAAgB,CAChB,UACF","file":"pages-custom-marker-and-popup-js.c03937bb.chunk.css","sourcesContent":[".newPopup .leaflet-popup-content-wrapper,\n.newPopup .leaflet-popup-tip {\n  width: auto;\n  background: #000;\n  color: #fff;\n}\n"]}
