@@ -203,7 +203,7 @@ const MapWrapper = () => {
                     <p><strong>İşletmeci:</strong> {neighborhood.type}</p>
                     <p><strong>GGKP:</strong> {neighborhood.GGKP}</p>
                     <p><strong>Aylık Kira:</strong> {neighborhood.aylıkKira}</p>
-                    <p><strong>Toplam Kira:</strong> {neighborhood.aylıkKira * 12}</p>
+                    <p><strong>Toplam Kira:</strong> {parseFloat(neighborhood.aylıkKira) * 12}</p>
                     <p><strong>Müdürlük:</strong> {neighborhood.işletmeci}</p>
                     <p><strong>Tarife Durumu:</strong> {neighborhood.tarifeDurumu}</p> 
                   </div>
