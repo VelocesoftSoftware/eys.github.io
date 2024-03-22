@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-leaflet-examples"]=this["webpackJsonpreact-leaflet-examples"]||[]).push([[51],{105:function(e,s,t){},126:function(e,s,t){"use strict";t.r(s);t(0);var c=t(9),l=(t(105),t(1));s.default=()=>Object(l.jsxs)("div",{children:[Object(l.jsx)("h1",{children:"404 - Not Found!"}),Object(l.jsx)("div",{className:"flex",children:Object(l.jsx)(c.b,{to:"/simple-map",children:"go home"})})]})}}]);
-//# sourceMappingURL=51.8787f275.chunk.js.map

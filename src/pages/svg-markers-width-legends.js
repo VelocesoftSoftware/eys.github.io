@@ -76,16 +76,12 @@ const MapWrapper = () => {
     name: "",
     type: "",
     GGKP: "",
-    aylıkKira: "",
-    toplamKira: "",
+    aylıkKira: "", 
     işletmeci: "",
     tarifeDurumu: ""
   });
 
-  const handleSubmit = (e) => {
-    const aylıkKira = e.target.value;
-    const toplamKira = parseFloat(aylıkKira) * 12;
-    setFormData({ ...formData, aylıkKira, toplamKira });
+  const handleSubmit = (e) => { 
     e.preventDefault();
     const selectedCity = cities.find(city => city.name === formData.city);
     if (selectedCity) {
@@ -96,8 +92,7 @@ const MapWrapper = () => {
         latitude: selectedCity.latitude, 
         longitude: selectedCity.longitude,
         GGKP: formData.GGKP,
-        aylıkKira: formData.aylıkKira,
-        toplamKira: formData.toplamKira,
+        aylıkKira: formData.aylıkKira, 
         işletmeci: formData.işletmeci,
         tarifeDurumu: formData.tarifeDurumu
       };
@@ -136,7 +131,16 @@ const MapWrapper = () => {
             <option value="ISG SABIHA GOKÇEN">ISG SABIHA GOKÇEN</option>
           </select>
         </div>
-        
+        <div className="form-group">
+          <label htmlFor="işletmeci">Müdürlük:</label>
+          <input
+            type="text"
+            id="işletmeci"
+            name="işletmeci"
+            value={formData.işletmeci}
+            onChange={(e) => setFormData({ ...formData, işletmeci: e.target.value })}
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="name">Mahal Kodu:</label>
           <input
@@ -165,29 +169,11 @@ const MapWrapper = () => {
             id="aylıkKira"
             name="aylıkKira"
             value={formData.aylıkKira}
-            onChange={handleAylıkKiraChange}
+            onChange={(e) => setFormData({ ...formData, aylıkKira: e.target.value })}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="toplamKira">Toplam Kira:</label>
-          <input
-            type="text"
-            id="toplamKira"
-            name="toplamKira"
-            value={formData.toplamKira}
-            onChange={(e) => setFormData({ ...formData, toplamKira: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="işletmeci">Müdürlük:</label>
-          <input
-            type="text"
-            id="işletmeci"
-            name="işletmeci"
-            value={formData.işletmeci}
-            onChange={(e) => setFormData({ ...formData, işletmeci: e.target.value })}
-          />
-        </div>
+        
+       
         <div className="form-group">
           <label htmlFor="tarifeDurumu">Tarife Durumu:</label>
           <input
@@ -217,7 +203,7 @@ const MapWrapper = () => {
                     <p><strong>İşletmeci:</strong> {neighborhood.type}</p>
                     <p><strong>GGKP:</strong> {neighborhood.GGKP}</p>
                     <p><strong>Aylık Kira:</strong> {neighborhood.aylıkKira}</p>
-                    <p><strong>Toplam Kira:</strong> {neighborhood.toplamKira}</p>
+                    <p><strong>Toplam Kira:</strong> {neighborhood.aylıkKira * 12}</p>
                     <p><strong>Müdürlük:</strong> {neighborhood.işletmeci}</p>
                     <p><strong>Tarife Durumu:</strong> {neighborhood.tarifeDurumu}</p> 
                   </div>
