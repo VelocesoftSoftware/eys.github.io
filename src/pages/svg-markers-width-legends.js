@@ -83,6 +83,9 @@ const MapWrapper = () => {
   });
 
   const handleSubmit = (e) => {
+    const aylıkKira = e.target.value;
+    const toplamKira = parseFloat(aylıkKira) * 12;
+    setFormData({ ...formData, aylıkKira, toplamKira });
     e.preventDefault();
     const selectedCity = cities.find(city => city.name === formData.city);
     if (selectedCity) {
@@ -94,7 +97,7 @@ const MapWrapper = () => {
         longitude: selectedCity.longitude,
         GGKP: formData.GGKP,
         aylıkKira: formData.aylıkKira,
-        toplamKira: parseFloat(formData.aylıkKira) * 12,
+        toplamKira: formData.toplamKira,
         işletmeci: formData.işletmeci,
         tarifeDurumu: formData.tarifeDurumu
       };
@@ -162,7 +165,7 @@ const MapWrapper = () => {
             id="aylıkKira"
             name="aylıkKira"
             value={formData.aylıkKira}
-            onChange={(e) => setFormData({ ...formData, aylıkKira: e.target.value })}
+            onChange={handleAylıkKiraChange}
           />
         </div>
         <div className="form-group">
